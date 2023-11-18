@@ -1,0 +1,7 @@
+scripts/
+coverage/
+/babel.config.js
+/metro.config.js
+/.eslintrc.js
+jest.config.js
+

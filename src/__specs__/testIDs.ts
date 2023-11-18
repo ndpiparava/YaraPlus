@@ -1,0 +1,4 @@
+export const TEST_IDS = {
+  LOADING_VIEW: 'LOADING_VIEW',
+  ERROR_VIEW: 'ERROR_VIEW',
+};
