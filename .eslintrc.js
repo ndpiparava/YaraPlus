@@ -1,4 +1,3 @@
-
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
@@ -23,6 +22,9 @@ module.exports = {
   settings: {
     'import/resolver': {
       typescript: {}, // this loads <rootdir>/tsconfig.json to ESLint
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts', '.ts'],
+      },
     },
     'import/ignore': ['node_modules'],
   },
