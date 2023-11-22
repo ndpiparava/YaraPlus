@@ -1,0 +1,9 @@
+[submodule "modules/CropMinitor"]
+	path = modules/CropMinitor
+	url = https://github.com/ndpiparava/CropMonitor.git
+[submodule "modules/TankMix"]
+	path = modules/TankMix
+	url = https://github.com/ndpiparava/TankMixIT.git
+[submodule "modules/yaracomponents"]
+	path = modules/yaracomponents
+	url = https://github.com/ndpiparava/yara-components.git
