@@ -1,11 +1,11 @@
 import React from 'react';
 import { FlatList, SafeAreaView, FlatListProps } from 'react-native';
+import styled from 'styled-components/native';
 
 import AppTile, { AppIdType, AppType } from '@YaraPlus/components/AppTile';
 import { useTypedNavigation } from '@YaraPlus/hooks/useTypedNavigation';
 
 import { HomeStackParamList, Screen } from '../Screen';
-import styled from 'styled-components/native';
 
 const data: AppType[] = [
   { id: AppIdType.CheckIt, title: 'CheckIT' },

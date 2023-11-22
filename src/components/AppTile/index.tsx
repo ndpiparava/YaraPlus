@@ -30,7 +30,7 @@ export default memo(AppTile);
 
 const TileContainer = styled.Pressable`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.lightSecondaryBlue};
   border-radius: 8px;
   elevation: 4;
   margin: 8px;

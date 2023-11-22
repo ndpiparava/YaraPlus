@@ -10,6 +10,11 @@ enum ColorType {
   blackGrey = '#15151A',
   mediumDark = '#4e4e4e',
   error = '#FF7F7F',
+  primaryBlue = '#15213A',
+  secondaryBlue = '#384257',
+  lightSecondaryBlue = '#9FC9ED',
+  yellow = '#D4AD52',
+  lightYellow = '#EBDA8C',
 }
 
 export default ColorType;

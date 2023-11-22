@@ -5,7 +5,7 @@ import { HomeStackParamList, Screen } from '@YaraPlus/screens/Screen';
 
 import CheckITRootNavigation from '../../../modules/CheckIT/navigation';
 import CropMonitorRootNavigation from '../../../modules/CropMonitor/navigation';
-import TankMixRootNavigation from '../../../modules/TankMixIT/navigation';
+import TankMixRootNavigation from '../../../modules/TankMix/navigation';
 import FarmRootNavigation from '../../../modules/atfram/navigation';
 
 const HomeStack = createStackNavigator<HomeStackParamList>();

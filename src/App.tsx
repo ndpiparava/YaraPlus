@@ -15,8 +15,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import HomeStackNavigator from './apstack/HomeStackNavigator/HomeStackNavigator';
 import { useLocaleStore } from './store/useLocalStore';
 import theme from './themes/ThemeType';
-import { ThemeProvider } from './themes/styled-components';
 import { translations } from './translations';
+import { ThemeProvider } from 'styled-components/native';
 
 const queryClient = new QueryClient();
 

@@ -7,3 +7,6 @@
 [submodule "modules/yaracomponents"]
 	path = modules/yaracomponents
 	url = https://github.com/ndpiparava/yara-components.git
+[submodule "modules/CropMonitor"]
+	path = modules/CropMonitor
+	url = https://github.com/ndpiparava/CropMonitor.git
