@@ -10,3 +10,6 @@
 [submodule "modules/atfarm"]
 	path = modules/atfarm
 	url = https://github.com/ndpiparava/atfram.git
+[submodule "modules/CheckIT"]
+	path = modules/CheckIT
+	url = https://github.com/ndpiparava/CheckIT.git
