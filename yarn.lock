@@ -8089,10 +8089,10 @@ yaml@^2.2.1:
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.3.4.tgz#53fc1d514be80aabf386dc6001eb29bf3b7523b2"
   integrity sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==
 
-yara-commons@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/yara-commons/-/yara-commons-1.0.0.tgz#46008a9a98b58e3fb22481f61d68aa4027e1d97f"
-  integrity sha512-xAbekhKvw793i0G6avZyatBCbS68G+I8lI4CRnjLB38VM+yEY9oqgwLQ6NGzliTTmeNBJ6oI4+lrYVNOlx4EQw==
+yara-commons@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/yara-commons/-/yara-commons-1.0.5.tgz#2234c21b6b03d6474c433c2771644a6c0b69f0ac"
+  integrity sha512-7ACG3YTtE8c42EsxtunxH6kmTxA0+wHL5G/wMrOj+lPG+qycphTAvTDIoAfbMbyo8dgs/6nOZzKcrlBUBMX4Ng==
   dependencies:
     "@types/react" "^18.2.38"
     typescript "^5.3.2"
