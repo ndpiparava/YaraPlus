@@ -2,11 +2,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from '@YaraPlus/screens/HomeScreen';
 import { HomeStackParamList, Screens } from '@YaraPlus/screens/Screen';
+import FarmRootNavigation from 'modules/atfarm/navigation';
 
 import CheckITRootNavigation from '../../../modules/CheckIT/navigation';
 import CropMonitorRootNavigation from '../../../modules/CropMonitor/navigation';
 import TankMixRootNavigation from '../../../modules/TankMix/navigation';
-import FarmRootNavigation from '../../../modules/atfram/navigation';
 
 const HomeStack = createStackNavigator<HomeStackParamList>();
 

@@ -7,3 +7,6 @@
 [submodule "modules/yara-components"]
 	path = modules/yara-components
 	url = https://github.com/ndpiparava/yara-components.git
+[submodule "modules/atfarm"]
+	path = modules/atfarm
+	url = https://github.com/ndpiparava/atfram.git
