@@ -5,7 +5,7 @@ import { CropMonitorRootStackParamList } from 'modules/CropMonitor/screens';
 import { TankMixRootStackParamList } from 'modules/TankMix/screens';
 import { FarmRootStackParamList } from 'modules/atfram/screens';
 
-export enum Screen {
+export enum Screens {
   HomeScreen = 'Home',
   CheckIt = 'CheckIt',
   Farm = 'Farm',
@@ -14,9 +14,9 @@ export enum Screen {
 }
 
 export type HomeStackParamList = {
-  [Screen.HomeScreen]: ParamListBase;
-  [Screen.CheckIt]: CheckItRootStackParamList;
-  [Screen.Farm]: FarmRootStackParamList;
-  [Screen.TankMixIT]: TankMixRootStackParamList;
-  [Screen.CropMonitor]: CropMonitorRootStackParamList;
+  [Screens.HomeScreen]: ParamListBase;
+  [Screens.CheckIt]: CheckItRootStackParamList;
+  [Screens.Farm]: FarmRootStackParamList;
+  [Screens.TankMixIT]: TankMixRootStackParamList;
+  [Screens.CropMonitor]: CropMonitorRootStackParamList;
 };

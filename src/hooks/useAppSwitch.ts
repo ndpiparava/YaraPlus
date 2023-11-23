@@ -1,6 +1,6 @@
 import { AppIdType, AppType } from 'yara-commons';
 
-import { HomeStackParamList, Screen } from '@YaraPlus/screens/Screen';
+import { HomeStackParamList, Screens } from '@YaraPlus/screens/Screen';
 
 import { useTypedNavigation } from './useTypedNavigation';
 
@@ -10,16 +10,16 @@ const useAppSwitch = () => {
   const onAppSelect = (app: AppType) => {
     switch (app.id) {
       case AppIdType.CheckIt:
-        navigation.navigate(Screen.CheckIt);
+        navigation.navigate(Screens.CheckIt);
         break;
       case AppIdType.Farm:
-        navigation.navigate(Screen.Farm);
+        navigation.navigate(Screens.Farm);
         break;
       case AppIdType.TankMix:
-        navigation.navigate(Screen.TankMixIT);
+        navigation.navigate(Screens.TankMixIT);
         break;
       case AppIdType.CropMonitor:
-        navigation.navigate(Screen.CropMonitor);
+        navigation.navigate(Screens.CropMonitor);
         break;
       default:
         break;
