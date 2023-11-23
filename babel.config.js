@@ -8,7 +8,7 @@ module.exports = {
         extensions: ['.js', '.ts', '.tsx', '.json'],
         alias: {
           '@YaraPlus': './src',
-          '@modules': './modules',
+          // '@modules': './modules',
         },
       },
     ],
