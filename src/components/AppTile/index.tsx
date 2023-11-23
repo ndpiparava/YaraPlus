@@ -1,17 +1,6 @@
 import { memo } from 'react';
 import styled from 'styled-components/native';
-
-export enum AppIdType {
-  CheckIt = 'checkit',
-  Farm = 'farm',
-  TankMix = 'tankmix',
-  CropMonitor = 'cropmonitor',
-}
-
-export type AppType = {
-  id: AppIdType;
-  title: string;
-};
+import { AppType } from 'yara-commons';
 
 type PropsType = {
   app: AppType;

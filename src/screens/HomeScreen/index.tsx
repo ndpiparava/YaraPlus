@@ -1,40 +1,14 @@
 import React from 'react';
 import { FlatList, SafeAreaView, FlatListProps } from 'react-native';
 import styled from 'styled-components/native';
+import { useGetYaraApps, AppType } from 'yara-commons';
 
-import AppTile, { AppIdType, AppType } from '@YaraPlus/components/AppTile';
-import { useTypedNavigation } from '@YaraPlus/hooks/useTypedNavigation';
-
-import { HomeStackParamList, Screen } from '../Screen';
-
-const data: AppType[] = [
-  { id: AppIdType.CheckIt, title: 'CheckIT' },
-  { id: AppIdType.Farm, title: 'At Farm' },
-  { id: AppIdType.TankMix, title: 'TankMixIT' },
-  { id: AppIdType.CropMonitor, title: 'CropMonitor' },
-];
+import AppTile from '@YaraPlus/components/AppTile';
+import useAppSwitch from '@YaraPlus/hooks/useAppSwitch';
 
 const HomeScreen = () => {
-  const navigation = useTypedNavigation<HomeStackParamList>();
-
-  const onAppSelect = (app: { id: string; title: string }) => {
-    switch (app.id) {
-      case AppIdType.CheckIt:
-        navigation.navigate(Screen.CheckIt);
-        break;
-      case AppIdType.Farm:
-        navigation.navigate(Screen.Farm);
-        break;
-      case AppIdType.TankMix:
-        navigation.navigate(Screen.TankMixIT);
-        break;
-      case AppIdType.CropMonitor:
-        navigation.navigate(Screen.CropMonitor);
-        break;
-      default:
-        break;
-    }
-  };
+  const { products } = useGetYaraApps();
+  const { onAppSelect } = useAppSwitch();
 
   const renderItem = ({ item }: { item: AppType }) => (
     <AppTile app={item} onAppSelect={onAppSelect} />
@@ -44,7 +18,7 @@ const HomeScreen = () => {
     <HomeWrapper>
       <AppFlatList
         style={{ width: '100%' }}
-        data={data}
+        data={products}
         numColumns={2}
         renderItem={renderItem}
         keyExtractor={item => item.id}

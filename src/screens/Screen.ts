@@ -1,10 +1,8 @@
-import { CheckItRootStackParamList } from '@modules/CheckIT/screens';
 import { ParamListBase } from '@react-navigation/native';
 
-// import { CheckItRootStackParamList } from 'modules/CheckIT/screens';
-import { TankMixRootStackParamList } from 'modules/TankMixIT/screens';
-
+import { CheckItRootStackParamList } from 'modules/CheckIT/screens';
 import { CropMonitorRootStackParamList } from 'modules/CropMonitor/screens';
+import { TankMixRootStackParamList } from 'modules/TankMix/screens';
 import { FarmRootStackParamList } from 'modules/atfram/screens';
 
 export enum Screen {
