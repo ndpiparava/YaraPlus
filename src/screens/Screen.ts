@@ -3,7 +3,7 @@ import { ParamListBase } from '@react-navigation/native';
 import { CheckItRootStackParamList } from 'modules/CheckIT/screens';
 import { CropMonitorRootStackParamList } from 'modules/CropMonitor/screens';
 import { TankMixRootStackParamList } from 'modules/TankMix/screens';
-import { FarmRootStackParamList } from 'modules/atfram/screens';
+import { FarmRootStackParamList } from 'modules/atfarm/screens';
 
 export enum Screens {
   HomeScreen = 'Home',
@@ -11,6 +11,7 @@ export enum Screens {
   Farm = 'Farm',
   TankMixIT = 'TankMixIT',
   CropMonitor = 'CropMonitor',
+  DrawerMenu = 'DrawerMenu',
 }
 
 export type HomeStackParamList = {
@@ -19,4 +20,9 @@ export type HomeStackParamList = {
   [Screens.Farm]: FarmRootStackParamList;
   [Screens.TankMixIT]: TankMixRootStackParamList;
   [Screens.CropMonitor]: CropMonitorRootStackParamList;
+};
+
+export type DrawerParamList = {
+  [Screens.DrawerMenu]: ParamListBase;
+  [Screens.HomeScreen]: HomeStackParamList;
 };

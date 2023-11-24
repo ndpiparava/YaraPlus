@@ -4,12 +4,16 @@ import { AppType } from 'yara-commons';
 
 type PropsType = {
   app: AppType;
+  backgroundColor?: string;
   onAppSelect: (app: AppType) => void;
 };
 
-const AppTile = ({ app, onAppSelect }: PropsType) => {
+const AppTile = ({ app, onAppSelect, backgroundColor }: PropsType) => {
   return (
-    <TileContainer onPress={() => onAppSelect(app)}>
+    <TileContainer
+      onPress={() => onAppSelect(app)}
+      backgroundColor={backgroundColor}
+    >
       <ButtonText>{app.title}</ButtonText>
     </TileContainer>
   );
@@ -17,9 +21,14 @@ const AppTile = ({ app, onAppSelect }: PropsType) => {
 
 export default memo(AppTile);
 
-const TileContainer = styled.Pressable`
+type TileContainerPropsType = {
+  backgroundColor?: string;
+};
+
+const TileContainer = styled.Pressable<TileContainerPropsType>`
   flex: 1;
-  background-color: ${({ theme }) => theme.colors.lightSecondaryBlue};
+  background-color: ${({ theme, backgroundColor }) =>
+    backgroundColor ? backgroundColor : theme.colors.lightSecondaryBlue};
   border-radius: 8px;
   elevation: 4;
   margin: 8px;

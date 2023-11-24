@@ -1,3 +1,4 @@
+import { useRoute } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from '@YaraPlus/screens/HomeScreen';
@@ -12,7 +13,10 @@ const HomeStack = createStackNavigator<HomeStackParamList>();
 
 const HomeStackNavigator = () => {
   return (
-    <HomeStack.Navigator initialRouteName={Screens.HomeScreen}>
+    <HomeStack.Navigator
+      initialRouteName={Screens.HomeScreen}
+      screenOptions={{ headerShown: true }}
+    >
       <HomeStack.Screen name={Screens.HomeScreen} component={HomeScreen} />
       <HomeStack.Screen
         name={Screens.Farm}

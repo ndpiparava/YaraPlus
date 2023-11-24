@@ -11,7 +11,11 @@ const HomeScreen = () => {
   const { onAppSelect } = useAppSwitch();
 
   const renderItem = ({ item }: { item: AppType }) => (
-    <AppTile app={item} onAppSelect={onAppSelect} />
+    <AppTile
+      app={item}
+      onAppSelect={onAppSelect}
+      backgroundColor={item.brandColor}
+    />
   );
 
   return (

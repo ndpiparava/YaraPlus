@@ -15,6 +15,10 @@ enum ColorType {
   lightSecondaryBlue = '#9FC9ED',
   yellow = '#D4AD52',
   lightYellow = '#EBDA8C',
+  checkItBrandColor = '#FFBF00',
+  farmBrandColor = '#00a651',
+  cropBrandColor = '#FF6347',
+  tankMixBrandColor = '#808080',
 }
 
 export default ColorType;

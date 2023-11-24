@@ -11,12 +11,14 @@ import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { ThemeProvider } from 'styled-components/native';
 
+import AppDrawerNavigator from './apstack/AppDrawerNavigator';
 import HomeStackNavigator from './apstack/HomeStackNavigator/HomeStackNavigator';
+import DrawerMenuScreen from './screens/DrawerMenuScreen';
 import { useLocaleStore } from './store/useLocalStore';
 import theme from './themes/ThemeType';
 import { translations } from './translations';
-import { ThemeProvider } from 'styled-components/native';
 
 const queryClient = new QueryClient();
 
@@ -30,7 +32,7 @@ function App(): JSX.Element {
           <ThemeProvider theme={{ ...theme }}>
             <StatusBar />
             <NavigationContainer>
-              <HomeStackNavigator />
+              <AppDrawerNavigator />
             </NavigationContainer>
           </ThemeProvider>
         </IntlProvider>
