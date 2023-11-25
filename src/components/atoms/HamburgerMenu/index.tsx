@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
 
+import BackArrowIcon from '@YaraPlus/assets/Icons/BackArrowIcon';
 import HamburgerMenuIcon from '@YaraPlus/assets/Icons/HamburgerMenuIcon';
 import useRootNavigation from '@YaraPlus/hooks/useRootNavigation';
-import BackArrowIcon from '@YaraPlus/assets/Icons/BackArrowIcon';
 
 type PropsType = {
   showBackButton?: boolean;

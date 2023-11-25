@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from '@YaraPlus/screens/HomeScreen';
 import { HomeStackParamList, Screens } from '@YaraPlus/screens/Screen';
-import FarmRootNavigation from 'modules/atfarm/navigation';
+// import FarmRootNavigation from 'modules/atfarm/navigation';
 
 import CheckITRootNavigation from '../../../modules/CheckIT/navigation';
 import CropMonitorRootNavigation from '../../../modules/CropMonitor/navigation';
@@ -18,11 +18,11 @@ const HomeStackNavigator = () => {
       screenOptions={{ headerShown: true }}
     >
       <HomeStack.Screen name={Screens.HomeScreen} component={HomeScreen} />
-      <HomeStack.Screen
+      {/* <HomeStack.Screen
         name={Screens.Farm}
         component={FarmRootNavigation}
         options={{ headerShown: false }}
-      />
+      /> */}
       <HomeStack.Screen
         name={Screens.CheckIt}
         component={CheckITRootNavigation}

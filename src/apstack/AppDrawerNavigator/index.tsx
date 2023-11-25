@@ -1,21 +1,19 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import React, { lazy, Suspense } from 'react';
-import { Text, View } from 'react-native';
+import React, { Suspense } from 'react';
 import { useTheme } from 'styled-components';
-import { useGetYaraApps } from 'yara-commons';
+import { AppIdType, AppType, useGetYaraApps } from 'yara-commons';
 
 import DrawerMenuScreen from '@YaraPlus/screens/DrawerMenuScreen';
+import NotFoundScreen from '@YaraPlus/screens/NotFoundScreen';
 import { Screens } from '@YaraPlus/screens/Screen';
+import {
+  FarmModule,
+  CheckModule,
+  CropModule,
+  TankMixModule,
+} from '@YaraPlus/submodules';
 
 import HomeStackNavigator from '../HomeStackNavigator/HomeStackNavigator';
-
-// Lazy import statements
-const CheckITRootNavigation = lazy(() => import('modules/CheckIT/navigation'));
-const CropMonitorRootNavigation = lazy(
-  () => import('modules/CropMonitor/navigation'),
-);
-const TankMixRootNavigation = lazy(() => import('modules/TankMix/navigation'));
-const FarmRootNavigation = lazy(() => import('modules/atfarm/navigation'));
 
 const Drawer = createDrawerNavigator();
 
@@ -24,16 +22,16 @@ const AppDrawerNavigator = () => {
 
   const theme = useTheme();
 
-  const getDrawerMenuComponent = (product: any) => {
+  const getDrawerMenuComponent = (product: AppType) => {
     switch (product.id) {
-      case 'farm':
-        return FarmRootNavigation;
-      case 'checkit':
-        return CheckITRootNavigation;
-      case 'cropmonitor':
-        return CropMonitorRootNavigation;
-      case 'tankmix':
-        return TankMixRootNavigation;
+      case AppIdType.Farm:
+        return FarmModule;
+      case AppIdType.CheckIt:
+        return CheckModule;
+      case AppIdType.CropMonitor:
+        return CropModule;
+      case AppIdType.TankMix:
+        return TankMixModule;
       default:
         return DrawerMenuScreen;
     }
@@ -59,7 +57,7 @@ const AppDrawerNavigator = () => {
           key={product.id}
           name={product.title}
           component={() => (
-            <Suspense fallback={<LoadingFallback />}>
+            <Suspense fallback={<NotFoundScreen />}>
               {React.createElement(getDrawerMenuComponent(product))}
             </Suspense>
           )}
@@ -77,12 +75,5 @@ const AppDrawerNavigator = () => {
     </Drawer.Navigator>
   );
 };
-
-// LoadingFallback component to show while lazy component is loading
-const LoadingFallback = () => (
-  <View>
-    <Text>Loading...</Text>
-  </View>
-);
 
 export default AppDrawerNavigator;
