@@ -8,7 +8,10 @@ const MenuList = () => {
   const { products } = useGetYaraApps();
   const { onAppSelect } = useAppSwitch();
   const renderItem = ({ item }: { item: AppType }) => (
-    <ItemContainer onPress={() => onAppSelect(item)}>
+    <ItemContainer
+      onPress={() => onAppSelect(item)}
+      backgroundColor={item.brandColor}
+    >
       <ItemText>{item.title}</ItemText>
       <Divider />
     </ItemContainer>
@@ -34,7 +37,11 @@ const MenuFlatList = styled(
   background-color: ${({ theme }) => theme.colors.lightSecondaryBlue};
 `;
 
-const ItemContainer = styled.Pressable`
+type ItemContainerProps = {
+  backgroundColor?: string;
+};
+
+const ItemContainer = styled.Pressable<ItemContainerProps>`
   flex-direction: column;
   justify-content: space-around;
   align-items: left;
@@ -42,7 +49,8 @@ const ItemContainer = styled.Pressable`
   padding-right: 20px;
   width: 100%;
   height: 60px;
-  background-color: ${({ theme }) => theme.colors.lightSecondaryBlue};
+  background-color: ${({ theme, backgroundColor }) =>
+    backgroundColor ? backgroundColor : theme.colors.lightSecondaryBlue};
 `;
 
 const ItemText = styled.Text`

@@ -1,4 +1,5 @@
 enum ColorType {
+  superWhite = '#FAFDFF',
   white = '#FFFFFF',
   black = '#000000',
   superLightGrey = '#f6f6f6',
