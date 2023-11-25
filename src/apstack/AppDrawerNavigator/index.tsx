@@ -39,7 +39,7 @@ const AppDrawerNavigator = () => {
   return (
     <Drawer.Navigator>
       <Drawer.Screen
-        name={Screens.HomeScreen}
+        name={Screens.DrawerHomeScreen}
         component={HomeStackNavigator}
         options={{
           headerShown: false,

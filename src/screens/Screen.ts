@@ -1,7 +1,8 @@
 import { ParamListBase } from '@react-navigation/native';
 
 export enum Screens {
-  HomeScreen = 'Home',
+  HomeScreen = 'AppHome',
+  DrawerHomeScreen = 'Home',
   CheckIt = 'CheckIt',
   Farm = 'Farm',
   TankMixIT = 'TankMixIT',
