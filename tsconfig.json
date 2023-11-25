@@ -20,7 +20,8 @@
     "baseUrl": ".",
     "types": ["node", "jest", "styled-components-react-native"],
     "paths": {
-      "@YaraPlus/*": ["./src/*"]
+      "@YaraPlus/*": ["./src/*"],
+      "@modules/*": ["./modules/*"]
     }
   },
   "include": ["src", "modules"],

@@ -1,7 +1,7 @@
-import CheckITRootNavigation from 'modules/CheckIT/navigation';
-import CropMonitorRootNavigation from 'modules/CropMonitor/navigation';
-import TankMixRootNavigation from 'modules/TankMix/navigation';
-import FarmRootNavigation from 'modules/atfarm/navigation';
+import CheckITRootNavigation from '@modules/CheckIT/navigation';
+import CropMonitorRootNavigation from '@modules/CropMonitor/navigation';
+import TankMixRootNavigation from '@modules/TankMix/navigation';
+import FarmRootNavigation from '@modules/atfarm/navigation';
 
 export const CheckModule = CheckITRootNavigation;
 export const CropModule = CropMonitorRootNavigation;
