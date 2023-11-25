@@ -1,15 +1,14 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import React, { Suspense } from 'react';
+import React from 'react';
 import { useTheme } from 'styled-components';
-import { AppIdType, AppType, useGetYaraApps } from 'yara-commons';
+import { AppIdType, useGetYaraApps } from 'yara-commons';
 
-import DrawerMenuScreen from '@YaraPlus/screens/DrawerMenuScreen';
 import NotFoundScreen from '@YaraPlus/screens/NotFoundScreen';
 import { Screens } from '@YaraPlus/screens/Screen';
 import {
-  FarmModule,
   CheckModule,
   CropModule,
+  FarmModule,
   TankMixModule,
 } from '@YaraPlus/submodules';
 
@@ -22,8 +21,8 @@ const AppDrawerNavigator = () => {
 
   const theme = useTheme();
 
-  const getDrawerMenuComponent = (product: AppType) => {
-    switch (product.id) {
+  const getDrawerMenuComponent = (appId: AppIdType) => {
+    switch (appId) {
       case AppIdType.Farm:
         return FarmModule;
       case AppIdType.CheckIt:
@@ -33,7 +32,7 @@ const AppDrawerNavigator = () => {
       case AppIdType.TankMix:
         return TankMixModule;
       default:
-        return DrawerMenuScreen;
+        return NotFoundScreen;
     }
   };
 
@@ -56,11 +55,7 @@ const AppDrawerNavigator = () => {
         <Drawer.Screen
           key={product.id}
           name={product.title}
-          component={() => (
-            <Suspense fallback={<NotFoundScreen />}>
-              {React.createElement(getDrawerMenuComponent(product))}
-            </Suspense>
-          )}
+          component={getDrawerMenuComponent(product.id)}
           initialParams={{ product }}
           options={{
             headerShown: false,

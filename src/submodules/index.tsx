@@ -1,67 +1,52 @@
-import React, { Suspense } from 'react';
-import { AppIdType } from 'yara-commons';
+import CheckITRootNavigation from 'modules/CheckIT/navigation';
+import CropMonitorRootNavigation from 'modules/CropMonitor/navigation';
+import TankMixRootNavigation from 'modules/TankMix/navigation';
+import FarmRootNavigation from 'modules/atfarm/navigation';
 
+export const CheckModule = CheckITRootNavigation;
+export const CropModule = CropMonitorRootNavigation;
+export const TankMixModule = TankMixRootNavigation;
+export const FarmModule = FarmRootNavigation;
+
+/*
+
+import React, { Suspense, lazy, memo, useCallback } from 'react';
+import { AppIdType } from 'yara-commons';
 import NotFoundScreen from '@YaraPlus/screens/NotFoundScreen';
 
-const getModule = async (appId: AppIdType) => {
-  try {
-    let importedModule;
 
+const CheckModule = lazy(() => import('modules/CheckIT/navigation'));
+const CropModule = lazy(() => import('modules/CropMonitor/navigation'));
+const TankMixModule = lazy(() => import('modules/TankMix/navigation'));
+const FarmModule = lazy(() => import('modules/atfarm/navigation'));
+
+const AppModule = ({ appId }) => {
+  const getDrawerMenuComponent = useCallback(() => {
     switch (appId) {
       case AppIdType.Farm:
-        importedModule = await import('modules/atfarm/navigation');
-        break;
-
+        return FarmModule;
       case AppIdType.CheckIt:
-        importedModule = await import('modules/CheckIT/navigation');
-        break;
-
+        return CheckModule;
       case AppIdType.CropMonitor:
-        importedModule = await import('modules/CropMonitor/navigation');
-        break;
-
+        return CropModule;
       case AppIdType.TankMix:
-        importedModule = await import('modules/TankMix/navigation');
-        break;
-
+        return TankMixModule;
       default:
-        return { default: NotFoundScreen };
+        return NotFoundScreen;
     }
+  }, [appId]);
 
-    if (
-      importedModule.default &&
-      typeof importedModule.default === 'function'
-    ) {
-      return { default: importedModule.default };
-    } else {
-      console.error(
-        `Invalid default export for ${appId} module:`,
-        importedModule.default,
-      );
-      return { default: NotFoundScreen };
-    }
-  } catch (error) {
-    console.error('Error while importing module:', error);
-    return { default: NotFoundScreen };
-  }
-};
-
-export const CheckModule = React.lazy(() => getModule(AppIdType.CheckIt));
-export const FarmModule = React.lazy(() => getModule(AppIdType.Farm));
-export const CropModule = React.lazy(() => getModule(AppIdType.CropMonitor));
-export const TankMixModule = React.lazy(() => getModule(AppIdType.TankMix));
-
-const LazyLoadedComponent = (moduleId: AppIdType) => {
-  const LazyComponent = React.lazy(() => getModule(moduleId));
+  const Component = getDrawerMenuComponent();
 
   return (
     <Suspense fallback={<NotFoundScreen />}>
-      {React.createElement(LazyComponent)}
+      // { {React.createElement(getDrawerMenuComponent(appId))} }
+      <Component />
     </Suspense>
   );
 };
 
-export const CheckModule1 = LazyLoadedComponent(AppIdType.CheckIt);
-export const FarmModule1 = LazyLoadedComponent(AppIdType.Farm);
-export const CropModule1 = LazyLoadedComponent(AppIdType.CropMonitor);
-export const TankMixModule1 = LazyLoadedComponent(AppIdType.TankMix);
+
+export default AppModule;
+
+*/

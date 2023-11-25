@@ -1,13 +1,13 @@
-import { useRoute } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from '@YaraPlus/screens/HomeScreen';
 import { HomeStackParamList, Screens } from '@YaraPlus/screens/Screen';
-// import FarmRootNavigation from 'modules/atfarm/navigation';
-
-import CheckITRootNavigation from '../../../modules/CheckIT/navigation';
-import CropMonitorRootNavigation from '../../../modules/CropMonitor/navigation';
-import TankMixRootNavigation from '../../../modules/TankMix/navigation';
+import {
+  CheckModule,
+  CropModule,
+  FarmModule,
+  TankMixModule,
+} from '@YaraPlus/submodules';
 
 const HomeStack = createStackNavigator<HomeStackParamList>();
 
@@ -18,24 +18,24 @@ const HomeStackNavigator = () => {
       screenOptions={{ headerShown: true }}
     >
       <HomeStack.Screen name={Screens.HomeScreen} component={HomeScreen} />
-      {/* <HomeStack.Screen
+      <HomeStack.Screen
         name={Screens.Farm}
-        component={FarmRootNavigation}
+        component={FarmModule}
         options={{ headerShown: false }}
-      /> */}
+      />
       <HomeStack.Screen
         name={Screens.CheckIt}
-        component={CheckITRootNavigation}
+        component={CheckModule}
         options={{ headerShown: false }}
       />
       <HomeStack.Screen
         name={Screens.TankMixIT}
-        component={TankMixRootNavigation}
+        component={TankMixModule}
         options={{ headerShown: false }}
       />
       <HomeStack.Screen
         name={Screens.CropMonitor}
-        component={CropMonitorRootNavigation}
+        component={CropModule}
         options={{ headerShown: false }}
       />
     </HomeStack.Navigator>
