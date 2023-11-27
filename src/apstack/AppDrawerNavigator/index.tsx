@@ -13,6 +13,7 @@ import {
 } from '@YaraPlus/submodules';
 
 import HomeStackNavigator from '../HomeStackNavigator/HomeStackNavigator';
+import HomeScreen from '@YaraPlus/screens/HomeScreen';
 
 const Drawer = createDrawerNavigator();
 

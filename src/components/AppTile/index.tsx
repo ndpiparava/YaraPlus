@@ -6,9 +6,19 @@ type PropsType = {
   app: AppType;
   backgroundColor?: string;
   onAppSelect: (app: AppType) => void;
+  isFeatureEnabled?: boolean;
 };
 
-const AppTile = ({ app, onAppSelect, backgroundColor }: PropsType) => {
+const AppTile = ({
+  app,
+  onAppSelect,
+  backgroundColor,
+  isFeatureEnabled = true,
+}: PropsType) => {
+  if (!isFeatureEnabled) {
+    return <BlankView />;
+  }
+
   return (
     <TileContainer
       onPress={() => onAppSelect(app)}
@@ -40,10 +50,17 @@ const TileContainer = styled.Pressable<TileContainerPropsType>`
   height: 300px;
   justify-content: center;
   align-items: center;
+  //width: 50%;
 `;
 
 const ButtonText = styled.Text`
   color: ${({ theme }) => theme.colors.black};
   font-size: 16px;
   text-align: center;
+`;
+
+const BlankView = styled.View`
+  flex: 1;
+  background-color: ${({ theme }) => theme.colors.white};
+  //width: 50%;
 `;
